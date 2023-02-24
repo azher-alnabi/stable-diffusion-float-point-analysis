@@ -1,4 +1,24 @@
-# WIP
+# Image fidelity Data Analysis
+
+This is an analysis on how floating point precision loss affects image fidelity when it comes to image rendering using Stable Diffusion.
+* Compares fp16 to fp32
+* Includes with VAE Bake in and without
+
+## fp16 vs fp32 Image Rendered:
+
+### VAE included
+
+<p align="center">
+  <img src="input/anything-v4.0-pruned-fp16-vae.png" alt="White-Haired Warrior Princess">
+  <img src="input/anything-v4.0-pruned-fp32-vae.png" alt="White-Haired Warrior Princess">
+</p>
+
+### VAE not included
+
+<p align="center">
+  <img src="input/anything-v4.0-pruned-fp16.png" alt="White-Haired Warrior Princess">
+  <img src="input/anything-v4.0-pruned-fp32.png" alt="White-Haired Warrior Princess">
+</p>
 
 ## Parameters used in fabrication of both fp16 and fp32 Images:
 
@@ -33,7 +53,7 @@ Model link can be found here: [Checkpoint](https://huggingface.co/andite/anythin
 
 Model link can be found here: [Checkpoint](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp16.ckpt)
 
-### Variational Autoencoder Baked into fp16 & fp32 Models:
+### Variational Autoencoder (VAE) Baked into fp16 & fp32 Models:
 
 VAE link can be found here: [VAE](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0.vae.pt)
 This VAE was baked in to both models prior to analysis
