@@ -9,16 +9,22 @@ This is an analysis on how floating point precision loss affects image fidelity 
 ### VAE included
 
 <p align="center">
-  <img src="input/anything-v4.0-pruned-fp16-vae.png" alt="White-Haired Warrior Princess">
-  <img src="input/anything-v4.0-pruned-fp32-vae.png" alt="White-Haired Warrior Princess">
+  <img src="input/anything-v4.0-pruned-fp16-vae.png" alt="White-Haired Warrior Princess" width="384" height="384">
+  <img src="input/anything-v4.0-pruned-fp32-vae.png" alt="White-Haired Warrior Princess" width="384" height="384">
 </p>
+
+[Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16-vae.png) was rendered using the fp16 model
+[Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32-vae.png) was rendered using the fp32 model
 
 ### VAE not included
 
 <p align="center">
-  <img src="input/anything-v4.0-pruned-fp16.png" alt="White-Haired Warrior Princess">
-  <img src="input/anything-v4.0-pruned-fp32.png" alt="White-Haired Warrior Princess">
+  <img src="input/anything-v4.0-pruned-fp16.png" alt="White-Haired Warrior Princess" width="384" height="384">
+  <img src="input/anything-v4.0-pruned-fp32.png" alt="White-Haired Warrior Princess" width="384" height="384">
 </p>
+
+[Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16.png) was rendered using the fp16 model
+[Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32.png) was rendered using the fp32 model
 
 ## Parameters used in fabrication of both fp16 and fp32 Images:
 
