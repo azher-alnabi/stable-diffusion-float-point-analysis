@@ -1,8 +1,17 @@
-# Image Fidelity Data Analysis (WIP)
+# Image Fidelity Data Analysis: fp16 vs fp32
 
 This is an analysis on how floating point precision loss affects image fidelity when it comes to image rendering using Stable Diffusion.
 * Compares pixels of rendered images between the fp16 model and the fp32 model
 * Includes with VAE Bake in and without
+
+I made this script as I constantly see on forums like reddit and discord the common misconception that float precision of a stable diffusion model affecting the quality of image that stable diffusion renders. My script does the following:
+* Breaks up each pixel in an image into it's position and RGB value
+* Does a checksum between the fp16 model rendered image and the fp32 model rendered image
+
+Run script using:
+```
+python3 main.py
+```
 
 ## fp16 vs fp32 Image Rendered:
 
