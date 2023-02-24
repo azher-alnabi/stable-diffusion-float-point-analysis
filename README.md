@@ -1,4 +1,4 @@
-# Image fidelity Data Analysis
+# Image Fidelity Data Analysis (WIP)
 
 This is an analysis on how floating point precision loss affects image fidelity when it comes to image rendering using Stable Diffusion.
 * Compares pixels of rendered images between the fp16 model and the fp32 model
