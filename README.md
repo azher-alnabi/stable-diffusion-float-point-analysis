@@ -1,7 +1,7 @@
 # Image fidelity Data Analysis
 
 This is an analysis on how floating point precision loss affects image fidelity when it comes to image rendering using Stable Diffusion.
-* Compares fp16 to fp32
+* Compares pixels of rendered images between the fp16 model and the fp32 model
 * Includes with VAE Bake in and without
 
 ## fp16 vs fp32 Image Rendered:
@@ -13,8 +13,8 @@ This is an analysis on how floating point precision loss affects image fidelity 
   <img src="input/anything-v4.0-pruned-fp32-vae.png" alt="White-Haired Warrior Princess" width="384" height="384">
 </p>
 
-[Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16-vae.png) was rendered using the fp16 model
-[Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32-vae.png) was rendered using the fp32 model
+- [Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16-vae.png) was rendered using the fp16 model
+- [Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32-vae.png) was rendered using the fp32 model
 
 ### VAE not included
 
@@ -23,8 +23,8 @@ This is an analysis on how floating point precision loss affects image fidelity 
   <img src="input/anything-v4.0-pruned-fp32.png" alt="White-Haired Warrior Princess" width="384" height="384">
 </p>
 
-[Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16.png) was rendered using the fp16 model
-[Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32.png) was rendered using the fp32 model
+- [Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16.png) was rendered using the fp16 model
+- [Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32.png) was rendered using the fp32 model
 
 ## Parameters used in fabrication of both fp16 and fp32 Images:
 
@@ -51,13 +51,13 @@ Negative Prompt:
 
 GUI used to render images found here: [GUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
-### Anything v4.0 pruned fp32 Checkpoint:
-
-Model link can be found here: [Checkpoint](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp32.ckpt)
-
 ### Anything v4.0 pruned fp16 Checkpoint:
 
 Model link can be found here: [Checkpoint](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp16.ckpt)
+
+### Anything v4.0 pruned fp32 Checkpoint:
+
+Model link can be found here: [Checkpoint](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp32.ckpt)
 
 ### Variational Autoencoder (VAE) Baked into fp16 & fp32 Models:
 
