@@ -1,21 +1,12 @@
-# Image Fidelity Data Analysis: fp16 vs fp32
+# Comprehensive Image Fidelity Data Analysis: fp16 vs fp32
 
-This is an analysis on how floating point precision loss affects image fidelity when it comes to image rendering using Stable Diffusion.
+I attempted to analyze the impact of floating point precision loss on image fidelity in the context of Stable Diffusion image rendering. This is a work in progress (WIP)
 * Compares pixels of rendered images between the fp16 model and the fp32 model
-* Includes with VAE Bake in and without
-
-I made this script as I constantly see on forums like reddit and discord the common misconception that float precision of a stable diffusion model affecting the quality of image that stable diffusion renders. My script does the following:
-* Breaks up each pixel in an image into it's position and RGB value
-* Does a checksum between the fp16 model rendered image and the fp32 model rendered image
-
-Run script using:
-```
-python3 main.py
-```
+* Includes with Variational Autoencoder (VAE) Bake in and without
 
 ## fp16 vs fp32 Image Rendered:
 
-### VAE included
+### text-to-image testing: Variational Autoencoder included
 
 <p align="center">
   <img src="input/anything-v4.0-pruned-fp16-vae.png" alt="White-Haired Warrior Princess" width="384" height="384">
@@ -25,7 +16,9 @@ python3 main.py
 - [Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16-vae.png) was rendered using the [fp16 model](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp16.ckpt) + [VAE](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0.vae.pt) Bake in
 - [Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32-vae.png) was rendered using the [fp32 model](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp32.ckpt) + [VAE](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0.vae.pt) Bake in
 
-### VAE not included
+Results show that there is no difference between fp16 model and the fp32 model when both models have the VAE baked in.
+
+### text-to-image testing: Variational Autoencoder not included
 
 <p align="center">
   <img src="input/anything-v4.0-pruned-fp16.png" alt="White-Haired Warrior Princess" width="384" height="384">
@@ -34,6 +27,8 @@ python3 main.py
 
 - [Left image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp16.png) was rendered using the [fp16 model](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp16.ckpt)
 - [Right image](https://github.com/azher-alnabi/stable-diffusion-float-point-analysis/blob/main/input/anything-v4.0-pruned-fp32.png) was rendered using the [fp32 model](https://huggingface.co/andite/anything-v4.0/blob/main/anything-v4.0-pruned-fp32.ckpt)
+
+Results show that there is no difference between fp16 model and the fp32 model.
 
 ## Parameters used in fabrication of both fp16 and fp32 Images:
 
@@ -53,6 +48,26 @@ Negative Prompt:
 * Height: 512
 * CFG Scale: 7
 * Seed: 815317003
+
+## Purpose:
+
+I created this script after noticing a common misconception on forums like Reddit and Discord regarding the impact of float precision on the quality of images produced by stable diffusion models. My script aims to address this issue by doing the following:
+* Break up each pixel in an image into it's position and RGB value
+* Does a checksum between the fp16 model rendered image and the fp32 model rendered image
+
+Run script using:
+```
+python3 main.py
+```
+
+## Conclusion for image fidelity between fp16 and fp32:
+
+### Text-to-Image (txt2img):
+
+For the Anything v4.0 fp16 and fp32 models:
+* Image Fidelity is the same between the two models
+
+Comparative analysis of fp16 and fp32 models suggests that, in certain cases, the former may offer advantages for rendering images with stable diffusion. Specifically, fp16 models demonstrate a reduction for VRAM usage and improving overall GPU utilization.
 
 ## External Resources Used:
 
