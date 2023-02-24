@@ -1,4 +1,4 @@
-# Comprehensive Image Fidelity Data Analysis: fp16 vs fp32
+# Comprehensive Image Fidelity Analysis: fp16 vs fp32
 
 I attempted to analyze the impact of floating point precision loss on image fidelity in the context of Stable Diffusion image rendering. This is a work in progress (WIP)
 * Compares pixels of rendered images between the fp16 model and the fp32 model
